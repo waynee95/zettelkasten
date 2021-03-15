@@ -127,12 +127,12 @@ date: 2021-03-12
 
 - Expected properties:
   1. Types should be enforceable
-    - Type declarations should be checked statically as much as possible
+  - Type declarations should be checked statically as much as possible
   2. Types should be decidably verifiable
-    - There should be a typechecking algorithm that can ensure that a program is well-typed
-  3. Typing rules should be transparent 
-    - It should be easy to see why a program is not well-typed
-    - If it fails, the reason should be clear
+  - There should be a typechecking algorithm that can ensure that a program is well-typed
+  3. Typing rules should be transparent
+  - It should be easy to see why a program is not well-typed
+  - If it fails, the reason should be clear
 
 ## Why Formal Type Systems?
 
@@ -146,15 +146,22 @@ date: 2021-03-12
 A multi-step process:
 
 1. Syntax
-  - For expressions, statements, ... (express algorithmic behavior)
-  - For types (express static knowledge)
+
+- For expressions, statements, ... (express algorithmic behavior)
+- For types (express static knowledge)
+
 2. Static semantics (typing rules)
-  - Define the typing judgment and its derivation rules
+
+- Define the typing judgment and its derivation rules
+
 3. Dynamic semantics (e.g. operational)
-  - Define the evaluation judgment and its derivation rules
+
+- Define the evaluation judgment and its derivation rules
+
 4. Type soundness
-  - Relates the static and dynamic semantics
-  - State and prove the soundness theorem
+
+- Relates the static and dynamic semantics
+- State and prove the soundness theorem
 
 ## References
 
