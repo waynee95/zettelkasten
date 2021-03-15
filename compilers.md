@@ -72,7 +72,7 @@ semicolon
 - Reads tokens and groups them into phrases/sentences according to the syntax specification
 - Can work top-down or bottom-up
 
-## Recursive Descent
+### Recursive Descent
 
 - Form of top-down parsing
 - Consists of mutually recursive parsing routines which _descend_ through a derivation tree
