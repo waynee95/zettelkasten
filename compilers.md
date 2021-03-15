@@ -92,7 +92,7 @@ TODO: Parsing introduction
 
 TODO: What is this?
 
-- The goal of syntax-directed translation is to constuct an [[abstract-syntax-tree]]#
+- The goal of syntax-directed translation is to construct an [[abstract-syntax-tree]]#
 
 ## References
 
