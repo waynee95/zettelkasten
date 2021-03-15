@@ -46,8 +46,7 @@ date: 2021-03-15
 
 ## Scanner
 
-- Scanner: Scan a source program and break it up into small, meaningful units, called _tokens_
-- Might also be called: Lexer or Tokenizer
+- Can also be called: _Lexer_ or _Tokenizer_
 - Can be built using a _lexer generator_ like [[jflex]]#
 
 ```
@@ -67,31 +66,52 @@ semicolon
 - Tokens: identifiers, constants, operators, $\dots$
 - Also: Removal of comments/whitespace, preparation of output listing (line numbers, correspondence of error messages and line numbers), communication with symbol table
 
-### Tokens, Lexemes, Patterns
-
-- **Token**: classification of entities of a program
-- **Lexeme**: specific instance of a token
-  - Example: `position` and `instance` are both identifiers, but different lexeme
-- Scanner has to keep track of "attributes" for each token:
-  - Identifiers: string
-  - Numbers: value
-- These attributes are used during semantic analysis and code generation
-- **Patterns**: Rules describing how tokens look like
-  - Are needed because the source language may contain infinite possible strings
-- These patterns are specified using a meta-language called _regular expressions_
-
 ## Parsing
 
-TODO: Parsing introduction
+- Are based on CFGs (context-free grammars)
+- Reads tokens and groups them into phrases/sentences according to the syntax specification
+- Can work top-down or bottom-up
 
-[[dangling-else]]#
+## Recursive Descent
 
-[[pratt-parsing]]#
+- Form of top-down parsing
+- Consists of mutually recursive parsing routines which _descend_ through a derivation tree
+- Each nonterminal has a corresponding _parsing procedure_
+
+Grammar example:
+
+```
+Stmt -> id assign Val Expr
+Stmt -> print id
+```
+
+Recursive-descent parsing procedure for `Stmt`:
+
+```js
+function Stmt() {
+  if (current() == ID) {
+    match(ID);
+    match(ASSIGN);
+
+    // Call parsing routines for Val and Expr
+    Val();
+    Expr();
+  } else if (current() == PRINT) {
+    match(PRINT);
+    match(ID);
+  } else {
+    throw Error;
+  }
+}
+```
 
 ### Syntax-directed Translation
 
-TODO: What is this?
-
+- SDT = Syntax-directed Translation
+- The translation of the source language is driven by the parser
+- SDT works by adding _actions_ to each production in the CFG
+  - These actions or _procedures_ are executed when the corresponding production is used in the derivation
+- This can be done using [attribute grammars](https://en.wikipedia.org/wiki/Attribute_grammar)
 - The goal of syntax-directed translation is to construct an [[abstract-syntax-tree]]#
 
 ## References
