@@ -48,7 +48,7 @@ date: 2021-03-15
 
 - Scanner: Scan a source program and break it up into small, meaningful units, called _tokens_
 - Might also be called: Lexer or Tokenizer
-- Can be built using a _lexer generator_ like [[JFlex]]#
+- Can be built using a _lexer generator_ like [[jflex]]#
 
 ```
 position := initial + rate * 60;
