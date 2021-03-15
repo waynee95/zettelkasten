@@ -1,5 +1,5 @@
 ---
-date: 2021-03-12
+date: 2021-03-15
 ---
 
 # Compilers
@@ -12,6 +12,9 @@ date: 2021-03-12
 
 - Compiler: translates a program written in one programming language into a program written in another programming language
 - Has _front_ and _back end_
+- A compiler consists of different _phases_ where each phase might consist of multiple _passes_
+  - Phase = coarse building block (lexing phase, parsing phase, semantic analysis phase, $\dots$)
+  - Pass = fine grained iteration inside a phase: syntax lowering pass, scope resolution pass, type checking pass, $\dots$
 
 ![](https://www.cdn.geeksforgeeks.org/wp-content/uploads/1-34.png)
 
@@ -79,9 +82,17 @@ semicolon
 
 ## Parsing
 
+TODO: Parsing introduction
+
 [[dangling-else]]#
 
 [[pratt-parsing]]#
+
+### Syntax-directed Translation
+
+TODO: What is this?
+
+- The goal of syntax-directed translation is to constuct an [[abstract-syntax-tree]]#
 
 ## References
 
