@@ -1,5 +1,5 @@
 ---
-date: 2021-03-12
+date: 2021-04-06
 ---
 
 # Type Systems
@@ -12,6 +12,13 @@ date: 2021-03-12
   - There are different compilers for the same language that implement slightly different type systems
 - Many languages have been found to be type unsound
   - Program crashes although it was accepted by the type checker
+
+## Soundness vs Completeness ([Reference](http://logan.tw/posts/2014/11/12/soundness-and-completeness-of-the-type-system/))
+
+- A type system is _sound_ implies that all of type-checked programs are correct (in the other words, all of the incorrect program can't be type checked), i.e. there won't be any _false negative_
+  - For negative, we mean that the type checker claims that there is no error in the input program, i.e. the input program is correct
+- A type system is _complete_ implies that all of the correct program can be accepted by the type checker, i.e. there won't be any _false positive_
+  - For positive, we mean that the type checker claims that there are some errors in the input program, i.e. the input program is incorrect
 
 ## Types
 
@@ -146,22 +153,15 @@ date: 2021-03-12
 A multi-step process:
 
 1. Syntax
-
-- For expressions, statements, ... (express algorithmic behavior)
-- For types (express static knowledge)
-
+   - For expressions, statements, ... (express algorithmic behavior)
+   - For types (express static knowledge)
 2. Static semantics (typing rules)
-
-- Define the typing judgment and its derivation rules
-
+   - Define the typing judgment and its derivation rules
 3. Dynamic semantics (e.g. operational)
-
-- Define the evaluation judgment and its derivation rules
-
+   - Define the evaluation judgment and its derivation rules
 4. Type soundness
-
-- Relates the static and dynamic semantics
-- State and prove the soundness theorem
+   - Relates the static and dynamic semantics
+   - State and prove the soundness theorem
 
 ## References
 
