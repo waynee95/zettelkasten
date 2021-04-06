@@ -1,5 +1,5 @@
 ---
-date: 2021-03-15
+date: 2021-04-06
 ---
 
 # Compilers
@@ -16,7 +16,7 @@ date: 2021-03-15
   - Phase = coarse building block (lexing phase, parsing phase, semantic analysis phase, $\dots$)
   - Pass = fine grained iteration inside a phase: syntax lowering pass, scope resolution pass, type checking pass, $\dots$
 
-![](https://www.cdn.geeksforgeeks.org/wp-content/uploads/1-34.png)
+![](static/compiler-overview.png)
 
 - Frontend deals with with source language, while the backend deals with the target language
 - Both are connected using (often more than one) _intermediate representation_ (IR), which is independent from either language
