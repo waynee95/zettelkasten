@@ -1,11 +1,11 @@
 ---
-title: Symbol Tables and Scopes
+title: Symbol Tables
 date: 2021-04-22
 ---
 
 ## Overview
 
-- The [[abstract-syntax-tree]] is the result of top-down or bottom-up parsing
+- The [[abstract-syntax-tree]]# is the result of top-down or bottom-up parsing
   - Such a parser is not enough to fully compile a modern programming language
   - To fully compile a program the compiler needs to take _context_ into consideration
 - Most PL allow declaration, definition and use of symbolic names to represent constants, variables, methods, types and objects
@@ -19,13 +19,7 @@ date: 2021-04-22
 - An AST node that mentions a symbol name will also have a field with a reference to the symbol name's entry in the symbol table
   - If such connection cannot be made, then the symbol was not declared properly and an error will be thrown
   - Otherwise, other passes can use the symbol table reference to obtain information like type, storage requirements,... about the symbol
-
-## Static Scoping
-
-- Most languages have scopes that bind the availability of symbols to a specific region of the program
-- A name may only be declared once inside a scope
-- Static scoping: references are resolved to the declaration in the _closest_ containing scope
-  - Additionally, there may be mechanisms to promote a symbol to the program's _global scope_
+- Most languages have scopes that bind the availability of symbols to a specific region of the program (See [[static-vs-dynamic-scope]]#)
 
 ## Symbol Table Interface
 
@@ -52,3 +46,7 @@ date: 2021-04-22
 - A symbol table may be associated with each scope or all symbols may be entered in a single _global_ table
   - A single table needs specific mechanisms to handle multiple active declarations of the same symbol
   - However, search for a symbol in a single table may be faster
+
+## References
+
+- [Crafting A Compiler, Chapter 8](https://www.goodreads.com/book/show/6152082-crafting-a-compiler) by Fischer et al.
