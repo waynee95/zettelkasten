@@ -1,5 +1,5 @@
 ---
-data: 2021-05-20
+date: 2021-05-20
 ---
 
 # Inheritance vs Subtyping
