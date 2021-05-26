@@ -1,22 +1,8 @@
 ---
-date: 2021-03-12
+date: 2021-05-26
 ---
 
-# Programming Language Semantics
-
-## Introduction
-
-- Programming language consists of _syntax_ and _semantics_
-
-### Syntax
-
-- Refers to the "spelling" of the program
-- Formalized by a formal grammar or syntax chart
-
-### Semantics
-
-- Refers to the _meaning_ of the program
-- Should be formally specified too, but is not often the case
+# Semantics
 
 ## Why formalize semantics?
 
@@ -28,7 +14,7 @@ date: 2021-03-12
   - It is harder to do than formally specifying syntax (unlike with BNF etc)
 - Semantic definition methods fall into three groups:
 
-### Operational Semantics
+## Operational Semantics
 
 - The meaning of a well-formed program is the trace of _computation steps_ that
   result from processing the program's input
@@ -36,7 +22,7 @@ date: 2021-03-12
   steps (the "intension") is the most important
 - Two differently coded programs that both compute factorial have _different_ operational semantics
 
-### Denotational Semantics
+## Denotational Semantics
 
 - The meaning of a well-formed program is a _mathematical function_ from input data
   to output data
@@ -45,7 +31,7 @@ date: 2021-03-12
 - Also called _extensional_ semantics
 - Here the two differently coded factorial programs have the _same_ denotational semantics
 
-### Axiomatic Semantics
+## Axiomatic Semantics
 
 - The meaning of a well-formed program is a _logical proposition_ (specification)
   that states properties about input and output
