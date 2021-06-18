@@ -10,6 +10,13 @@ date: 2021-04-22
   - To fully compile a program the compiler needs to take _context_ into consideration
 - Most PL allow declaration, definition and use of symbolic names to represent constants, variables, methods, types and objects
   - The compiler needs to verify if such names are used correctly
+- The symbol table is used to answer two questions:
+  1. Given a declaration of a name, is there already a declaration with the same name in the current scope?
+  2. Given the use of a name, to which declaration does it correspond, or is it undeclared?
+- Generally, the symbol table is only needed to answer thoses two questions
+  - Once all declarations have been processed to build the symbol table,
+  - And all uses of names have been linked to their corresponding declaration node in the AST
+  - Then the symbol table itself is no longer needed (because no more lookups on names will be performed)
 
 ## Symbol Table Construction
 
@@ -50,3 +57,4 @@ date: 2021-04-22
 ## References
 
 - [Crafting A Compiler, Chapter 8](https://www.goodreads.com/book/show/6152082-crafting-a-compiler) by Fischer et al.
+- [Lecture notes](https://www.d.umn.edu/~rmaclin/cs5641/Notes/L15_SymbolTable.pdf) from CS 5641 @ UMN
