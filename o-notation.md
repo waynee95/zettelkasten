@@ -16,6 +16,8 @@ $$
   - With $c_1, c_2$ we say that "the constants do not matter because you may pick $c_1$ and $c_2$ however you like to satisfy these conditions"
   - With $n_0$ we say that "we are only interested in large $n$, since you only have to satisfy the condition for all $n$ _bigger_ than $n_0$, and you may make $n_0$ as big as you want"
 
+![](static/o-notation-graphs.png)
+
 ## $\mathcal{O}$-Notation and $\Omega$-Notation
 
 - The definition of $\Theta$-notation relies on proving both a _lower_ and _upper_ asymptotic bound
