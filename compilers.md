@@ -1,5 +1,5 @@
 ---
-date: 2021-04-06
+date: 2021-08-21
 ---
 
 # Compilers
@@ -105,14 +105,8 @@ function Stmt() {
 }
 ```
 
-### Syntax-directed Translation
-
-- SDT = Syntax-directed Translation
-- The translation of the source language is driven by the parser
-- SDT works by adding _actions_ to each production in the CFG
-  - These actions or _procedures_ are executed when the corresponding production is used in the derivation
-- This can be done using [attribute grammars](https://en.wikipedia.org/wiki/Attribute_grammar)
-- The goal of syntax-directed translation is to construct an [[abstract-syntax-tree]]#
+TODO: Move scanning and parsing into own notes
+TODO: Link AST and IR notes
 
 ## References
 
