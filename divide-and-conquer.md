@@ -27,7 +27,7 @@ $$
 T(n) = T(n - 1) + \Theta(1)
 $$
 
-- There are 3 ways for obtaining asymptotic "$\Theta"$ or "$\mathcal{O}"$ bounds for recurrences
+- There are 3 ways for obtaining asymptotic "$\Theta$" or "$\mathcal{O}$" bounds for recurrences
   - **Substitution method:** guess a bound and then through mathematical induction prove it correct
   - **Recursion tree method:** convert recurrence into a tree, where the nodes are the costs of the different levels of the recursion. Use bounding techniques to solve the recurrence
   - **Master theorem:** "black box" for solving recurrences; provides bounds for recurrences of the form
@@ -47,7 +47,7 @@ $$
 - After drawing such a tree, we can solve the recurrence:
   1.  Compute (or bound) the _depth of the leaves_
   2.  Compute (or bound) the _sum for each level_
-  3.  Compute (or bound) the \_sum across all levels_o
+  3.  Compute (or bound) the _sum across all levels_
 
 ### Merge-sort recursion tree
 
