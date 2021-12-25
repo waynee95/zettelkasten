@@ -1,5 +1,5 @@
 ---
-date: 2021-08-15
+date: 2021-12-25
 ---
 
 # Isabelle/HOL
@@ -7,11 +7,80 @@ date: 2021-08-15
 ## Overview
 
 - Isabelle is a generic _proof assistant_
+  - generic framework for mechanizing logics
+  - a (functional programming language)
+  - an IDE for writing mathematical proofs
 - HOL = Higher-Order Logic = Functional Programming + Logic
 - Isabelle's interface is based on the [jEdit editor](http://www.jedit.org/)
 - In textual form most symbols are displayed as `\<name>`
   - `\<Rightarrow>` is rendered as $\Rightarrow$
 - File extension is `*.thy`
+- User encodes syntax of the target logic in the simply typed $\lambda$-calculus
+- Proof system should be represented in natural deduction style as sequents: $[\![ P_1 ; \dots ; P_n ]\!] \Rightarrow Q$
+  - Where $P_i$ and $Q$ are propositions written in the syntax of the target logic
+- The Isabelle kernel provides elementary functions for applying proof rules
+  - And theorems can only be created by applying these functions
+- The soundness of reasoning thus depends on the correctness of the kernel and the soundness of the logical system
+  - Both are ensured by software-engineering techniques such as tests and code review
+  - The usage of a strongly-typed functional programming language (Standard ML)
+  - And that the actual kernel implementation is relatively small
+- Isabelle also comes with a set of automated proof methods
+  - First-Order reasoner, rewriting engine, etc.
+  - Correctness for these proof methods is certified through applications of the kernel functions
+- For verification projects, users do not encode a logic of their own
+  - But rather use one of the predefined logics that come with a rich library of definitions and theorems
+- A verification project consists of several _theories_ that contain definitions and proof of theorems
+- Traditionally, proofs were written as a series of tactics which reduce the statement of a theorem to subproblems
+  - Which can be established by already available theorems or some automatic proof method
+- Nowadays, proofs are written in a _structured proof language_ called Isar
+  - In which a user writes proofs in a language similar to standard mathematical prose
+  - Isar proofs are more verbose but easier to read and maintain
+    - Each subproblem is formulated explicitly, whereas with tactics, subproblems are derived implicitly
+- Isabelle/HOL is the encoding of higher-order logic in Isabelle
+  - It is the most widely used object logic in Isabelle
+  - Has been used for numerous verification projects
+    - Including
+      - Proof of mathematical theorems
+      - Encodings of programming language semantics
+      - Verification of security protocols
+      - Verification of hardware and an operating system
+- Type constructors include `bool`, `'a => 'b`, product type `'a * 'b`
+  - The function arrow is right-associative, so `'a => 'b => 'c = 'a => ('b => 'c)`
+  - Functional values are defined as $\lambda$-terms
+- Function type and product type constructors are polymorphic: `'a` and `'b` can be instantiated by arbitrary types
+- Type inference is implicit, but type constraints can be added with `v :: t` where `v` is a term and `t` is a type
+- Sets are defined by their characteristic function: the type `'a set` is equivalent with the type `'a => bool`
+- Records are similar to products but have named fields
+  - For every field `f`, Isabelle defines a _selector function_, also called `f`
+  - Other operations on records include record construction and (functional) record update
+
+$$
+(\!| f = valf, g = valg |\!) \hspace{2em} rec (\!| g := valg' |\!)
+$$
+
+- Isabelle allows to define _inductive datatypes_
+- Example for defining Peano numbers with
+  - Nullary constructor `Zero`, written `0`
+  - Unary constructor `Suc`
+
+```
+datatype nat =
+  Zero ("0")
+  | Suc nat
+```
+
+- Inductive type constructors can be polymorphic as well
+  - The type `'a option` is defined with a nullary constructor `None` and a unary constructor `Some 'a`
+  - It can be understood by augmenting type `'a` by an additional value
+  - Isabelle also defines the function
+
+```
+the :: 'a option => 'a
+```
+
+- Such that `the (Some x) = x`, for any $x$ of type `'a`
+- The option type is used to represent partial functions in a logic of total functions: `'a => 'b option`
+  - Such a function returns `None` for an argument outside its domain and `Some y` otherwise
 
 ## Basics
 
@@ -114,3 +183,4 @@ TODO: `finally`, `moreover`, `.`, `..`, `...`, Proof patterns
 - [Semantics of Programming Languages course @ TUM](https://www21.in.tum.de/teaching/semantik/WS20/)
 - [Isabelle Cheatsheet](https://www.inf.ed.ac.uk/teaching/courses/ar/isabelle/FormalCheatSheet.pdf)
 - [Wenzel, Paulson, Nipkow. "The Isabelle Framework", 2008](https://www21.in.tum.de/~nipkow/pubs/tphols08t.pdf)
+- https://members.loria.fr/SMerz/papers/ijsi2009.pdf
