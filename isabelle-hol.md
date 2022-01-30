@@ -171,10 +171,37 @@ TODO: `finally`, `moreover`, `.`, `..`, `...`, Proof patterns
 ## The Isabelle Framework
 
 - Isabelle/Pure: _meta-logic_ that allows formalization of the syntax and inference rules of _object-logics_
-- Logical core is implemented using the "LCF approach" in ML
+- Logical core is implemented using the "LCF approach"
 - Isabelle/Isar: provides sophisticated extra-logical infrastructure supporting structured proofs and specifications
 - Isabelle/HOL: object-logic with plenty logic-specific add-ons and a large theory library
-  - There is also Isabelle/ZF (Zermelo-Fraenkel set-theory)
+
+## LCF Approach
+
+1. Theorems are data
+
+- Terms, formulas and theorems are computable data
+- An _inference rule_ is a function from theorem to theorems
+- ML's secure type system ensures soundness
+
+2. Tactics
+
+- Implement backwards reasoning
+- A tactic maps a goal to subgoals, returning a _validation_
+- Tacticals operate on tactics, express control structure
+
+## Meta-logic vs object-logic
+
+### Meta-Logic
+
+- Intuitionistic fragment of higher-order logic
+- Implemented using LCF approach
+- Used to formalize the logic of discourse
+
+### Object-Logic
+
+- The logic of discourse
+- Inference rules are theorems of the meta-logic
+- Wide range of object-logics available
 
 ## References
 
@@ -183,4 +210,6 @@ TODO: `finally`, `moreover`, `.`, `..`, `...`, Proof patterns
 - [Semantics of Programming Languages course @ TUM](https://www21.in.tum.de/teaching/semantik/WS20/)
 - [Isabelle Cheatsheet](https://www.inf.ed.ac.uk/teaching/courses/ar/isabelle/FormalCheatSheet.pdf)
 - [Wenzel, Paulson, Nipkow. "The Isabelle Framework", 2008](https://www21.in.tum.de/~nipkow/pubs/tphols08t.pdf)
-- https://members.loria.fr/SMerz/papers/ijsi2009.pdf
+- [Paulson, Nipkow, Wenzel. "From LCF to Isabelle/HOL", 2019](https://link.springer.com/content/pdf/10.1007/s00165-019-00492-1.pdf)
+- [Paulson. "The Foundation of a Generic Theorem Prover](https://www.cl.cam.ac.uk/~lp15/papers/Isabelle)
+- [Paulson, "Isabelle: The Next 700 Theorem Provers](https://www.cl.cam.ac.uk/~lp15/papers/Isabelle/chap700.pdf)
