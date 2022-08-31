@@ -5,7 +5,7 @@ date: 2021-06-23
 # Row Polymorphism
 
 > In programming language type theory, row polymorphism is a kind of polymorphism that allows one to write programs that are polymorphic on record field types (also known as rows, hence row polymorphism).
-> 
+>
 > -- <cite>https://en.wikipedia.org/wiki/Row_polymorphism</cite>
 
 - Has not yet found its ways into many mainstream languages

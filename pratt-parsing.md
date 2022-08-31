@@ -41,7 +41,7 @@ date: 2021-03-12
 ## Pratt Parsing
 
 > If recursive descent is peanut butter, Pratt parsing is jelly. When you mix the two together, you get a simple, terse, readable parser that can handle any grammar you throw at it.
-> 
+>
 > -- <cite>https://journal.stuffwithstuff.com/2011/03/19/pratt-parsers-expression-parsing-made-easy/</cite>
 
 ```javascript
