@@ -7,7 +7,7 @@ date: 2023-03-04
   the current block
   - The meaning of such free variables is given by the environment
   - A compiler or interpreter has special machinery to manage environments
-- However, this can be avoided by making all environements _explicit_ in the
+- However, this can be avoided by making all environments _explicit_ in the
   intermediate language
   - Each function is transformed into a tuple of code and environment
     - Where the code explicitly accesses the environment to retrieve values
@@ -18,7 +18,7 @@ date: 2023-03-04
     or environment conversion (because it makes all environments explicit)
 - Closure conversion transforms a program that may contain higher-order functions
   into a program with only first-order functions
-  - Instead of passing a prodecure as a parameter or returning one, a closure
+  - Instead of passing a function as a parameter or returning one, a closure
     data structure is passed or returned
 - Closure conversion is useful as a compiler transformation or can be used to
   emulate higher-order functions in a language that only supports first-order functions
