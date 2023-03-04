@@ -1,5 +1,5 @@
 ---
-date: 2021-08-21
+date: 2023-03-04
 ---
 
 # Intermediate Representation
@@ -79,6 +79,7 @@ date: 2021-08-21
   - Allows low-level optimizations based on _target architecture_
     - Register allocation, instruction selection, memory layout
 
-## References
+# References
 
 - https://people.inf.ethz.ch/suz/teaching/252-0210-f20/lec05.pdf
+- http://kameken.clique.jp/Lectures/Lectures2013/Compiler2013/a26-stanier.pdf
