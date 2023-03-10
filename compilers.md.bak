@@ -10,7 +10,7 @@ date: 2023-03-10
   - This process is called _translation_
   - Quite often the source and target language are vastly different
     - Source language = high-level programming language
-    - Target language = low-level language or assembly
+    - Targt language = low-level language or assembly
   - The compiler itself is written in the _implementation language_
 - The part of the compiler that does the _analysis_ of the source program is called _frontend_
   and the part of the compiler that does the _synthesis_ of the target language is called _backend_
@@ -27,7 +27,7 @@ date: 2023-03-10
 
 - Encompasses many different fields of computer science:
   - Formal languages (regular expressions, context-free languages)
-  - Programming languages (syntax, semantics, pragmatics)
+  - Programming langauges (syntax, semantics, pragmatics)
   - Algorithms and data structures ([[abstract-syntax-tree]]#, [[symbol-tables]]#, instruction selection, optimization)
   - Logic (type systems, program analysis)
   - Computer architecture (machine code)
@@ -49,7 +49,7 @@ date: 2023-03-10
 - Recognition of the syntactic structure is the main part of the syntax analysis
   phase
 - Semantic analysis analyses the semantics (meaning) of the source program
-  - This finishes the analysis phase by verifying some correctness properties
+  - This finishes the analysis phase by verifiying some correctness properties
     (type and scope rules) and begins the synthesis phase
 - In the synthesis phase, the source language constructs are translated into an
   [[intermediate-rep]]# (IR)
